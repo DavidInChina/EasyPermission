@@ -46,6 +46,9 @@ public class EasyPermission {
 
     @TargetApi(value = Build.VERSION_CODES.M)
     public void request() {
+        if (null == this.activity) {
+            throw new IllegalArgumentException("null activity is not supported");
+        }
         if (null == this.permissions) {
             //自动获取敏感权限列表
             this.permissions = EasyPermissionUtil.getPermissions(activity);
