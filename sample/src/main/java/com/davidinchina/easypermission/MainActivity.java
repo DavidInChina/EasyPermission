@@ -1,5 +1,6 @@
 package com.davidinchina.easypermission;
 
+import android.Manifest;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -15,15 +16,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EasyPermission.with(this).code(REQUEST_CODE).request();
-//        .permissions(
-//                Manifest.permission.READ_EXTERNAL_STORAGE,
-//                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-//                Manifest.permission.CAMERA,
-//                Manifest.permission.READ_PHONE_STATE,
-//                Manifest.permission.RECORD_AUDIO,
-//                Manifest.permission.ACCESS_COARSE_LOCATION,
-//                Manifest.permission.ACCESS_FINE_LOCATION)
+        EasyPermission.with(this).code(REQUEST_CODE).permissions(
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA,
+                Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.RECORD_AUDIO,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION).request();
     }
 
     @Override
