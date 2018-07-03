@@ -17,8 +17,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         //根据清单文件自动获取敏感权限一次性申请，无需过多管理
         EasyPermission.with(this).code(REQUEST_CODE).request();
-
-        //根据列出的权限分次获取敏感权限
+//        EasyPermission.with(this).code(REQUEST_CODE).permissions(
+//                Manifest.permission.READ_EXTERNAL_STORAGE
+//        ).request();
+//        //根据列出的权限分次获取敏感权限
 //        EasyPermission.with(this).code(REQUEST_CODE).permissions(
 //                Manifest.permission.READ_EXTERNAL_STORAGE,
 //                Manifest.permission.WRITE_EXTERNAL_STORAGE,
